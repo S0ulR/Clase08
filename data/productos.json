@@ -1,0 +1,28 @@
+[
+    {"id":1,
+    "name":"Shrimp - 16/20, Iqf, Shell On",
+    "price":77.8,
+    "stock":72
+    },
+    {
+        "id":2,
+        "name":"Cheese - Shred Cheddar / Mozza",
+        "price":77.66,
+        "stock":68
+    },
+    {
+        "id":3,
+        "name":"Squid Ink",
+        "price":72.71,
+        "stock":71},
+    {
+        "id":4,
+        "name":"Venison - Denver Leg Boneless",
+        "price":34.86,
+        "stock":53},
+    {
+        "id":5,
+        "name":"Wine - Red, Mosaic Zweigelt",
+        "price":42.1,
+        "stock":58}
+]
