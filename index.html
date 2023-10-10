@@ -3,64 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi tienda</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <h1>Mi Tienda</h1>
-  
-  <!-- Botones para cargar listas -->
-  <button id="cargarProductos">Cargar Productos</button>
-  <button id="cargarClientes">Cargar Clientes</button>
-  <button id="cargarVentas">Cargar Ventas</button>
-  
-  <!-- Formulario para agregar un producto -->
-  <h2>Agregar Producto</h2>
+  <h1>Mi tienda</h1>
+  <h2>Agregar producto</h2>
   <form id="productoForm">
-    <!-- Campos del producto -->
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
     <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="precio" required>
+    <input type="number" id="precio" name="precio" required step=".01">
     <label for="stock">Stock:</label>
     <input type="number" id="stock" name="stock" required>
-    <button type="submit">Agregar Producto</button>
+    <button type="submit">Agregar producto</button>
   </form>
-  
-  <!-- Lista de productos -->
-  <h2>Lista de Productos</h2>
+  <h2>Borrar producto</h2>
+  <form id="productoFormDelete">
+    <label for="id">Id producto:</label>
+    <input type="number" id="id" name="id" required min="1">
+    <button type="submit">Borrar producto</button>
+  </form>
+  <h2>Lista de productos</h2>
   <ul id="productosList">
   </ul>
-
-  <!-- Formulario para agregar un cliente -->
-  <h2>Agregar Cliente</h2>
+  <h2>Agregar cliente</h2>
   <form id="clienteForm">
-    <!-- Campos del cliente -->
     <label for="nombreCliente">Nombre:</label>
     <input type="text" id="nombreCliente" name="nombre" required>
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
-    <button type="submit">Agregar Cliente</button>
+    <button type="submit">Agregar cliente</button>
   </form>
-  
-  <!-- Lista de clientes -->
+  <h2>Borrar cliente</h2>
+  <form id="clienteFormDelete">
+    <label for="id">Id cliente:</label>
+    <input type="number" id="id" name="id" required min="1">
+    <button type="submit">Borrar cliente</button>
+  </form>
   <h2>Lista de Clientes</h2>
   <ul id="clientesList">
-  </ul>
-
-  <!-- Formulario para agregar una venta -->
-  <h2>Agregar Venta</h2>
-  <form id="ventaForm">
-    <!-- Campos de la venta -->
-    <label for="clienteId">ID del Cliente:</label>
-    <input type="number" id="clienteId" name="clienteId" required>
-    <!-- Agrega más campos según tus necesidades -->
-    <button type="submit">Agregar Venta</button>
-  </form>
-  
-  <!-- Lista de ventas -->
-  <h2>Lista de Ventas</h2>
-  <ul id="ventasList">
   </ul>
 
   <script src="./script.js"></script>

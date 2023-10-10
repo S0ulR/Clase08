@@ -1,28 +1,38 @@
 [
-    {"id":1,
-    "name":"Shrimp - 16/20, Iqf, Shell On",
-    "price":77.8,
-    "stock":72
-    },
-    {
-        "id":2,
-        "name":"Cheese - Shred Cheddar / Mozza",
-        "price":77.66,
-        "stock":68
-    },
-    {
-        "id":3,
-        "name":"Squid Ink",
-        "price":72.71,
-        "stock":71},
-    {
-        "id":4,
-        "name":"Venison - Denver Leg Boneless",
-        "price":34.86,
-        "stock":53},
-    {
-        "id":5,
-        "name":"Wine - Red, Mosaic Zweigelt",
-        "price":42.1,
-        "stock":58}
+  {
+    "id": 2,
+    "nombre": "Cheese - Shred Cheddar / Mozza",
+    "precio": 77.66,
+    "stock": 68
+  },
+  {
+    "id": 3,
+    "nombre": "Squid Ink",
+    "precio": 72.71,
+    "stock": 71
+  },
+  {
+    "id": 4,
+    "nombre": "Venison - Denver Leg Boneless",
+    "precio": 34.86,
+    "stock": 53
+  },
+  {
+    "id": 5,
+    "nombre": "Wine - Red, Mosaic Zweigelt",
+    "precio": 42.1,
+    "stock": 58
+  },
+  {
+    "nombre": "cepillo",
+    "precio": "10",
+    "stock": "1",
+    "id": 6
+  },
+  {
+    "nombre": "cepillo",
+    "precio": "10.5",
+    "stock": "10",
+    "id": 7
+  }
 ]

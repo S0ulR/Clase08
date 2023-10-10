@@ -1,12 +1,12 @@
 // Función para cargar la lista de productos
-function cargarProductos() {
+var cargarProductos = function cargarProductos() {
     fetch('./data/productos.json')
       .then((response) => response.json())
       .then((data) => {
-        const productosList = document.getElementById('productosList');
+        var productosList = document.getElementById('productosList');
         productosList.innerHTML = '';
         data.forEach((producto) => {
-          const li = document.createElement('li');
+          var li = document.createElement('li');
           li.textContent = `ID: ${producto.id}, Nombre: ${producto.nombre}, Precio: ${producto.precio}, Stock: ${producto.stock}`;
           productosList.appendChild(li);
         });
@@ -14,40 +14,33 @@ function cargarProductos() {
   }
   
   // Función para cargar la lista de clientes
-  function cargarClientes() {
+  var cargarClientes = function cargarClientes() {
     fetch('./data/clientes.json')
       .then((response) => response.json())
       .then((data) => {
-        const clientesList = document.getElementById('clientesList');
+        var clientesList = document.getElementById('clientesList');
         clientesList.innerHTML = '';
         data.forEach((cliente) => {
-          const li = document.createElement('li');
+          var li = document.createElement('li');
           li.textContent = `ID: ${cliente.id}, Nombre: ${cliente.nombre}, Email: ${cliente.email}`;
           clientesList.appendChild(li);
         });
       });
   }
   
-  // Función para cargar la lista de ventas
-  function cargarVentas() {
-    fetch('./data/ventas.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const ventasList = document.getElementById('ventasList');
-        ventasList.innerHTML = '';
-        data.forEach((venta) => {
-          const li = document.createElement('li');
-          li.textContent = `ID: ${venta.id}, Cliente ID: ${venta.clienteId}`;
-          ventasList.appendChild(li);
-        });
-      });
+
+  var cargar = function cargar()
+  {
+      cargarProductos();
+      cargarClientes();
   }
   
-  // Envío del formulario de producto
+
+  // agregar producto
   document.getElementById('productoForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(document.getElementById('productoForm'));
-    fetch('./data/productos', {
+    var formData = new FormData(document.getElementById('productoForm'));
+    fetch('/productos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(formData)),
@@ -60,11 +53,11 @@ function cargarProductos() {
       });
   });
   
-  // Envío del formulario de cliente
+  // Eagregar cliente
   document.getElementById('clienteForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(document.getElementById('clienteForm'));
-    fetch('./data/clientes', {
+    var formData = new FormData(document.getElementById('clienteForm'));
+    fetch('/clientes', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(formData)),
@@ -76,36 +69,44 @@ function cargarProductos() {
         document.getElementById('clienteForm').reset();
       });
   });
-  
-  // Envío del formulario de venta
-  document.getElementById('ventaForm').addEventListener('submit', (e) => {
+
+  // borrar producto
+  document.getElementById('productoFormDelete').addEventListener('submit', (e) => {
     e.preventDefault();
-    const formData = new FormData(document.getElementById('ventaForm'));
-    fetch('./data/ventas', {
-      method: 'POST',
+    var formData = new FormData(document.getElementById('productoFormDelete'));
+    var id = JSON.parse(JSON.stringify(Object.fromEntries(formData))).id;
+
+    fetch('/productos/'+id, {
+      method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.fromEntries(formData)),
+      // body: JSON.stringify(Object.fromEntries(formData)),
     })
       .then((response) => response.json())
       .then((data) => {
         alert(data.message);
-        cargarVentas();
-        document.getElementById('ventaForm').reset();
+        cargarProductos();
+        document.getElementById('productoFormDelete').reset();
       });
   });
-  
-  // Clic en el botón de cargar productos
-  document.getElementById('cargarProductos').addEventListener('click', () => {
-    cargarProductos();
+
+  // borrar cliente
+  document.getElementById('clienteFormDelete').addEventListener('submit', (e) => {
+    e.preventDefault();
+    var formData = new FormData(document.getElementById('clienteFormDelete'));
+    var id = JSON.parse(JSON.stringify(Object.fromEntries(formData))).id;
+
+    fetch('/clientes/'+id, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      // body: JSON.stringify(Object.fromEntries(formData)),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        alert(data.message);
+        cargarClientes();
+        document.getElementById('clienteFormDelete').reset();
+      });
   });
-  
-  // Clic en el botón de cargar clientes
-  document.getElementById('cargarClientes').addEventListener('click', () => {
-    cargarClientes();
-  });
-  
-  // Clic en el botón de cargar ventas
-  document.getElementById('cargarVentas').addEventListener('click', () => {
-    cargarVentas();
-  });
-  
+
+
+  window.addEventListener('load', cargar());
