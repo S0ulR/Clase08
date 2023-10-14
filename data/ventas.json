@@ -1,0 +1,80 @@
+[
+    {
+        "id":1,
+        "fecha":"3/5/2023",
+        "cliente_id":2,
+        "producto":"Cheese - Shred Cheddar / Mozza",
+        "cantidad":31},
+
+    {
+        "id":2,
+        "fecha":"10/4/2023",
+        "cliente_id":3,
+        "producto":"Wine - Red, Mosaic Zweigelt",
+        "cantidad":20
+    },
+
+    {
+        "id":3,
+        "fecha":"10/6/2022",
+        "cliente_id":4,
+        "producto":"Venison - Denver Leg Boneless",
+        "cantidad":22
+    },
+
+    {
+        "id":4,
+        "fecha":"6/4/2023",
+        "cliente_id":2,
+        "producto":"Wine - Red, Mosaic Zweigelt",
+        "cantidad":58
+    },
+
+    {
+        "id":5,
+        "fecha":"8/8/2023",
+        "cliente_id":5,
+        "producto":"Venison - Denver Leg Boneless",
+        "cantidad":24
+    },
+
+    {
+        "id":6,
+        "fecha":"2/2/2023",
+        "cliente_id":4,
+        "producto":"cepillo",
+        "cantidad":83
+    },
+
+    {
+        "id":7,
+        "fecha":"5/10/2023",
+        "cliente_id":2,
+        "producto":"cepillo",
+        "cantidad":51
+    },
+
+    {
+        "id":8,
+        "fecha":"14/1/2023",
+        "cliente_id":6,
+        "producto":"Wine - Red, Mosaic Zweigelt",
+        "cantidad":30
+    },
+
+    {
+        "id":9,
+        "fecha":"9/6/2023",
+        "cliente_id":6,
+        "producto":"Squid Ink",
+        "cantidad":96
+    },
+
+    {
+        "id":10,
+        "fecha":"5/12/2023",
+        "cliente_id":3,
+        "producto":"Cheese - Shred Cheddar / Mozza",
+        "cantidad":88
+    }
+]

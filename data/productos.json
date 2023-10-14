@@ -25,14 +25,8 @@
   },
   {
     "nombre": "cepillo",
-    "precio": "10",
-    "stock": "1",
-    "id": 6
-  },
-  {
-    "nombre": "cepillo",
-    "precio": "10.5",
-    "stock": "10",
+    "precio": "20",
+    "stock": "30",
     "id": 7
   }
 ]

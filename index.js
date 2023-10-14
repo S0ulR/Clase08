@@ -6,6 +6,7 @@ const port = 3000;
 app.use(express.static('../Clase08'));
 var clientes = require('./data/clientes.json');
 var productos = require('./data/productos.json');
+var ventas = require('./data/ventas.json');
 
 app.use(bodyParser.json());
 
@@ -23,6 +24,12 @@ function saveClientes(clientes) {
 app.get('/productos', (req, res) => {
   res.json(productos);
 });
+
+// Ruta para obtener un producto
+app.get('/productos/:id', (req, res) => {
+  var prod = productos.find(e =>parseInt(e.id) === parseInt(req.params.id));
+   res.json(prod);
+})
 
 // Ruta para agregar un producto
 app.post('/productos', (req, res) => {
@@ -51,6 +58,12 @@ app.get('/clientes', (req, res) => {
   res.json(clientes);
 });
 
+// Ruta para obtener un cliente
+app.get('/clientes/:id', (req, res) => {
+  var client = clientes.find(e =>parseInt(e.id) === parseInt(req.params.id));
+   res.json(client);
+});
+
 // Ruta para agregar un cliente
 app.post('/clientes', (req, res) => {
   var nuevoCliente = req.body;
@@ -71,6 +84,11 @@ app.delete('/clientes/:id', (req, res) => {
   } else {
     res.status(404).json({ message: 'Cliente no encontrado' });
   }
+});
+
+// Ruta para obtener todos las ventas
+app.get('/ventas', (req, res) => {
+  res.json(ventas);
 });
 
 app.listen(port, () => {

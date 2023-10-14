@@ -8,43 +8,73 @@
 </head>
 <body>
   <h1>Mi tienda</h1>
-  <h2>Agregar producto</h2>
-  <form id="productoForm">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
-    <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="precio" required step=".01">
-    <label for="stock">Stock:</label>
-    <input type="number" id="stock" name="stock" required>
-    <button type="submit">Agregar producto</button>
-  </form>
-  <h2>Borrar producto</h2>
-  <form id="productoFormDelete">
-    <label for="id">Id producto:</label>
-    <input type="number" id="id" name="id" required min="1">
-    <button type="submit">Borrar producto</button>
-  </form>
-  <h2>Lista de productos</h2>
-  <ul id="productosList">
-  </ul>
-  <h2>Agregar cliente</h2>
-  <form id="clienteForm">
-    <label for="nombreCliente">Nombre:</label>
-    <input type="text" id="nombreCliente" name="nombre" required>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <button type="submit">Agregar cliente</button>
-  </form>
-  <h2>Borrar cliente</h2>
-  <form id="clienteFormDelete">
-    <label for="id">Id cliente:</label>
-    <input type="number" id="id" name="id" required min="1">
-    <button type="submit">Borrar cliente</button>
-  </form>
-  <h2>Lista de Clientes</h2>
-  <ul id="clientesList">
-  </ul>
+  <fieldset>
+    <legend>Productos:</legend>  
+    <h2>Agregar producto</h2>
+    <form id="productoForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio" name="precio" required step=".01">
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" name="stock" required>
+      <button type="submit">Agregar producto</button>
+    </form>
+    <h2>Borrar producto</h2>
+    <form id="productoFormDelete">
+      <label for="id">Id producto:</label>
+      <input type="number" id="id" name="id" required min="1">
+      <button type="submit">Borrar producto</button>
+    </form>
+    <h2>Lista de productos</h2>
+    <ul id="productosList">
+    </ul>
+    <h2>Consultar producto</h2>
+    <form id="productoFormGetProducto">
+      <label for="id">Id producto:</label>
+      <input type="number" id="id" name="id" required min="1">
+      <button type="submit">Consultar producto</button>
+    </form>
+    <h2>Producto</h2>
+    <ul id="producto">
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Clientes:</legend>  
+    <h2>Agregar cliente</h2>
+    <form id="clienteForm">
+      <label for="nombreCliente">Nombre:</label>
+      <input type="text" id="nombreCliente" name="nombre" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Agregar cliente</button>
+    </form>
+    <h2>Borrar cliente</h2>
+    <form id="clienteFormDelete">
+      <label for="id">Id cliente:</label>
+      <input type="number" id="id" name="id" required min="1">
+      <button type="submit">Borrar cliente</button>
+    </form>
+    <h2>Lista de Clientes</h2>
+    <ul id="clientesList">
+    </ul>
+    <h2>Consultar cliente</h2>
+    <form id="clienteFormGet">
+      <label for="id">Id cliente:</label>
+      <input type="number" id="id" name="id" required min="1">
+      <button type="submit">Consultar cliente</button>
+    </form>
+    <h2>Cliente</h2>
+    <ul id="cliente">
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Ventas:</legend>  
+    <h2>Ventas</h2>
+    <ul id="ventasList">
+    </ul>
 
+  </fieldset>
   <script src="./script.js"></script>
 </body>
 </html>
